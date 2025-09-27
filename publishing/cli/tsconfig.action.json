@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/action/**/*", "src/core/**/*"],
+  "exclude": [
+    "src/cli/**/*",
+    "src/extension/**/*",
+    "**/*.test.ts",
+    "**/test/**/*",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist/action",
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  }
+}

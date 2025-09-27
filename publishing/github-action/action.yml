@@ -1,0 +1,42 @@
+name: 'Greenlight'
+description: 'Check web compatibility against Baseline standards'
+author: 'Greenlight Team'
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  files:
+    description: 'File patterns to check (space-separated, supports globs)'
+    required: false
+    default: ''
+  config:
+    description: 'Path to baseline.config.json'
+    required: false
+    default: './baseline.config.json'
+  output-format:
+    description: 'Output format (json, markdown, sarif)'
+    required: false
+    default: 'markdown'
+  fail-on-error:
+    description: 'Fail the action if compatibility issues are found'
+    required: false
+    default: 'false'
+  comment-pr:
+    description: 'Comment on pull request with results'
+    required: false
+    default: 'true'
+  github-token:
+    description: 'GitHub token for PR comments'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  results-count:
+    description: 'Number of compatibility issues found'
+  results-file:
+    description: 'Path to results file'
+
+runs:
+  using: 'node20'
+  main: 'dist/action/index.js'

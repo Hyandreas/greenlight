@@ -1,0 +1,9 @@
+/* Test CSS with modern features */
+.container {
+  aspect-ratio: 16/9;
+  container-type: inline-size;
+}
+
+.test:has(.child) {
+  color: red;
+}

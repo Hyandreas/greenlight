@@ -1,0 +1,28 @@
+{
+  "baseline": {
+    "target": "2024"
+  },
+  "severity": {
+    "default": "warning",
+    "features": {
+      "optional-chaining": "info",
+      "nullish-coalescing": "info",
+      "css-has-selector": "error", 
+      "clipboard-api": "error",
+      "dialog-element": "warning",
+      "top-level-await": "error",
+      "private-class-fields": "warning",
+      "css-container-queries": "warning",
+      "web-share-api": "info"
+    }
+  },
+  "include": [
+    "src/**/*.{js,jsx,ts,tsx,css,scss,less,html}"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/*.test.{js,ts}",
+    "**/*.spec.{js,ts}"
+  ]
+}

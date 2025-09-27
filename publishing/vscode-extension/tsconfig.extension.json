@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/extension/**/*", "src/core/**/*"],
+  "compilerOptions": {
+    "outDir": "./dist/extension",
+    "lib": ["ES2020"]
+  }
+}

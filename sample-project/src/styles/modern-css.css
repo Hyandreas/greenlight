@@ -1,0 +1,132 @@
+/* Modern CSS features that may not be baseline-compatible */
+
+/* CSS Cascade Layers - CSS Cascading Level 5 */
+@layer base, components, utilities;
+
+@layer base {
+  /* CSS :has() selector - CSS Selectors Level 4 */
+  .card:has(.urgent) {
+    border-color: red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+
+  /* Form validation styling with :has() */
+  .form-group:has(input:invalid) {
+    background-color: #ffeaea;
+  }
+
+  .form-group:has(input:valid) {
+    background-color: #eafff0;
+  }
+}
+
+@layer components {
+  /* CSS Container Queries - CSS Containment Module Level 3 */
+  .responsive-component {
+    container-type: inline-size;
+    container-name: component;
+  }
+
+  @container component (min-width: 300px) {
+    .responsive-component .title {
+      font-size: 1.5rem;
+    }
+    
+    .responsive-component .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @container component (min-width: 500px) {
+    .responsive-component .content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* CSS Subgrid - CSS Grid Layout Level 2 */
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .subgrid-item {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+  }
+}
+
+@layer utilities {
+  /* CSS color-mix() function - CSS Color Module Level 5 */
+  .mixed-colors {
+    background-color: color-mix(in srgb, blue 50%, white);
+    border-color: color-mix(in srgb, red 25%, transparent);
+  }
+
+  /* CSS relative color syntax - CSS Color Module Level 5 */
+  .relative-color {
+    --base-color: #3498db;
+    background-color: rgb(from var(--base-color) r g b / 0.8);
+    border-color: hsl(from var(--base-color) h s calc(l * 0.8));
+  }
+
+  /* CSS nesting - CSS Nesting Module */
+  .nested-example {
+    padding: 1rem;
+    
+    & .nested-child {
+      margin: 0.5rem;
+      
+      & .deeply-nested {
+        font-size: 0.875rem;
+        
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+    
+    &:focus-within {
+      outline: 2px solid blue;
+    }
+  }
+
+  /* CSS :is() and :where() - CSS Selectors Level 4 */
+  :is(.button, .link, .tab):hover {
+    transform: scale(1.05);
+  }
+
+  :where(.reset-margins) * {
+    margin: 0;
+  }
+
+  /* CSS individual transform properties - CSS Transforms Level 2 */
+  .transform-individual {
+    translate: 10px 20px;
+    rotate: 45deg;
+    scale: 1.2;
+  }
+}
+
+/* CSS @supports with modern features */
+@supports (container-type: inline-size) {
+  .container-query-supported {
+    container-type: inline-size;
+  }
+}
+
+@supports selector(:has(*)) {
+  .has-selector-supported {
+    display: block;
+  }
+}
+
+@supports (color: color-mix(in srgb, red, blue)) {
+  .color-mix-supported {
+    background: color-mix(in srgb, var(--primary-color), white 20%);
+  }
+}

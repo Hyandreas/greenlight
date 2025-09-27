@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseline Buddy Demo - Modern Web Features</title>
+    <link rel="stylesheet" href="styles/modern-css.css">
+</head>
+<body>
+    <header>
+        <h1>Baseline Buddy Demo Project</h1>
+        <p>This page demonstrates various non-baseline web features for testing compatibility.</p>
+    </header>
+
+    <main>
+        <!-- Container Query Demo -->
+        <section class="responsive-component">
+            <h2 class="title">Container Queries Demo</h2>
+            <div class="content">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+        </section>
+
+        <!-- CSS :has() Selector Demo -->
+        <section class="demo-section">
+            <h2>CSS :has() Selector Demo</h2>
+            <div class="card">
+                <h3>Regular Card</h3>
+                <p>This is a normal card.</p>
+            </div>
+            <div class="card">
+                <h3>Urgent Card</h3>
+                <p class="urgent">This card has urgent content and should be highlighted.</p>
+            </div>
+        </section>
+
+        <!-- Form with :has() styling -->
+        <section class="demo-section">
+            <h2>Form Validation with :has()</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email (required):</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone (optional):</label>
+                    <input type="tel" id="phone">
+                </div>
+            </form>
+        </section>
+
+        <!-- Dialog Demo -->
+        <section class="demo-section">
+            <h2>HTML Dialog Element Demo</h2>
+            <button id="open-modal-btn">Open Modal Dialog</button>
+            <button id="open-dialog-btn">Open Non-Modal Dialog</button>
+            
+            <!-- Modal Dialog -->
+            <dialog id="demo-modal">
+                <h3>Modal Dialog</h3>
+                <p>This is a modal dialog using the HTML dialog element.</p>
+                <button data-close-dialog>Close</button>
+            </dialog>
+            
+            <!-- Non-Modal Dialog -->
+            <dialog id="demo-dialog">
+                <h3>Non-Modal Dialog</h3>
+                <p>This is a non-modal dialog that doesn't block interaction with the page.</p>
+                <button data-close-dialog>Close</button>
+            </dialog>
+        </section>
+
+        <!-- Modern CSS Features -->
+        <section class="demo-section">
+            <h2>CSS Modern Features</h2>
+            <div class="mixed-colors">Color-mix() background</div>
+            <div class="relative-color">Relative color syntax</div>
+            <div class="nested-example">
+                <div class="nested-child">
+                    <div class="deeply-nested">CSS Nesting example</div>
+                </div>
+            </div>
+            <div class="transform-individual">Individual transform properties</div>
+        </section>
+
+        <!-- Subgrid Demo -->
+        <section class="demo-section">
+            <h2>CSS Subgrid Demo</h2>
+            <div class="main-grid">
+                <div>Grid Item 1</div>
+                <div class="subgrid-item">
+                    <div>Subgrid A</div>
+                    <div>Subgrid B</div>
+                </div>
+                <div>Grid Item 3</div>
+            </div>
+        </section>
+
+        <!-- Clipboard and Share Demo -->
+        <section class="demo-section">
+            <h2>Clipboard & Web Share API Demo</h2>
+            <button id="copy-btn">Copy Text to Clipboard</button>
+            <button id="read-btn">Read from Clipboard</button>
+            <button id="share-btn">Share this Page</button>
+            <div id="clipboard-status"></div>
+        </section>
+    </main>
+
+    <!-- JavaScript Modules with Modern Features -->
+    <script type="module">
+        import { DataManager } from './components/modern-features.js';
+        import { ClipboardManager } from './components/clipboard-demo.js';
+        import { DialogManager, CSSTypedOMDemo } from './components/dialog-demo.js';
+
+        // Initialize managers
+        const clipboardManager = new ClipboardManager();
+        const dialogManager = new DialogManager();
+
+        // Dialog controls
+        document.getElementById('open-modal-btn')?.addEventListener('click', () => {
+            dialogManager.openModal('demo-modal');
+        });
+
+        document.getElementById('open-dialog-btn')?.addEventListener('click', () => {
+            dialogManager.openNonModal('demo-dialog');
+        });
+
+        // Clipboard controls
+        document.getElementById('copy-btn')?.addEventListener('click', async () => {
+            const success = await clipboardManager.copyToClipboard('Hello from Baseline Buddy demo!');
+            updateStatus(success ? 'Text copied!' : 'Copy failed');
+        });
+
+        document.getElementById('read-btn')?.addEventListener('click', async () => {
+            const text = await clipboardManager.readFromClipboard();
+            updateStatus(text ? `Read: ${text}` : 'Read failed');
+        });
+
+        document.getElementById('share-btn')?.addEventListener('click', async () => {
+            const success = await clipboardManager.shareContent({
+                title: 'Baseline Buddy Demo',
+                text: 'Check out this demo of modern web features!',
+                url: window.location.href
+            });
+            updateStatus(success ? 'Shared successfully!' : 'Share failed');
+        });
+
+        function updateStatus(message) {
+            const status = document.getElementById('clipboard-status');
+            if (status) {
+                status.textContent = message;
+                setTimeout(() => status.textContent = '', 3000);
+            }
+        }
+
+        // CSS Typed OM Demo
+        const demoElements = document.querySelectorAll('.demo-section');
+        demoElements.forEach(element => {
+            const cssDemo = new CSSTypedOMDemo(element);
+            // Apply modern CSS via Typed OM when possible
+            cssDemo.setModernStyles();
+        });
+
+        console.log('Baseline Buddy demo initialized with modern web features!');
+    </script>
+</body>
+</html>

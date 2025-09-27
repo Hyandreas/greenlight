@@ -1,0 +1,25 @@
+{
+  "name": "baseline-buddy-sample",
+  "version": "1.0.0",
+  "description": "Sample project demonstrating non-baseline web features for Baseline Buddy",
+  "main": "src/index.html",
+  "scripts": {
+    "check": "baseline-buddy check src/**/*.{js,ts,css,html}",
+    "check:markdown": "baseline-buddy check src/**/*.{js,ts,css,html} --format markdown --output baseline-report.md",
+    "check:sarif": "baseline-buddy check src/**/*.{js,ts,css,html} --format sarif --output baseline-results.sarif",
+    "check:strict": "baseline-buddy check src/**/*.{js,ts,css,html} --fail-on any",
+    "serve": "python3 -m http.server 8000",
+    "serve:node": "npx http-server -p 8000"
+  },
+  "keywords": [
+    "baseline",
+    "web-compatibility",
+    "demo",
+    "modern-web-features"
+  ],
+  "author": "Baseline Buddy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.0.0"
+  }
+}
