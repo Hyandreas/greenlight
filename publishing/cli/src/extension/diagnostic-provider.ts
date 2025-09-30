@@ -34,8 +34,8 @@ export class DiagnosticProvider implements vscode.Disposable {
       // Update status bar
       this.updateStatus(results);
     } catch (error) {
-      console.error('Baseline Buddy: Error checking document', error);
-      vscode.window.showErrorMessage(`Baseline Buddy: Failed to check ${document.fileName}`);
+      console.error('Greenlight: Error checking document', error);
+      vscode.window.showErrorMessage(`Greenlight: Failed to check ${document.fileName}`);
     }
   }
 
@@ -83,13 +83,13 @@ export class DiagnosticProvider implements vscode.Disposable {
     }
 
     vscode.window.showInformationMessage(
-      `Baseline Buddy: Checked ${files.length} files, found ${totalIssues} compatibility issues`
+      `Greenlight: Checked ${files.length} files, found ${totalIssues} compatibility issues`
     );
   }
 
   clearDiagnostics() {
     this.diagnosticCollection.clear();
-    vscode.window.showInformationMessage('Baseline Buddy: Cleared all diagnostics');
+    vscode.window.showInformationMessage('Greenlight: Cleared all diagnostics');
   }
 
   private convertToDiagnostics(results: CompatibilityResult[], document: vscode.TextDocument): vscode.Diagnostic[] {
@@ -112,7 +112,7 @@ export class DiagnosticProvider implements vscode.Disposable {
           severity
         );
 
-        diagnostic.source = 'Baseline Buddy';
+        diagnostic.source = 'Greenlight';
         diagnostic.code = result.feature;
         
         // Add related information

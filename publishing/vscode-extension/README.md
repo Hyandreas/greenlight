@@ -1,17 +1,17 @@
-# 🎯 Greenlight
+# Greenlight
 
 A comprehensive VS Code extension and GitHub Action that detects non-Baseline web features and provides compatibility warnings with quick fixes.
 
 ## Features
 
-- **🔍 Real-time Detection**: Parses JavaScript/TypeScript and CSS to detect non-Baseline web features
-- **📊 Multiple Output Formats**: Console, JSON, Markdown, and SARIF for CI/CD integration
-- **⚙️ Flexible Configuration**: Support for Baseline 2024/2025 targets or custom browserslist
-- **🔧 VS Code Integration**: Real-time diagnostics with MDN links and polyfill suggestions
-- **🤖 GitHub Action**: Automated PR comments with compatibility reports
-- **📈 Code Scanning**: SARIF output for GitHub Advanced Security integration
+- **Real-time Detection**: Parses JavaScript/TypeScript and CSS to detect non-Baseline web features
+- **Multiple Output Formats**: Console, JSON, Markdown, and SARIF for CI/CD integration
+- **Flexible Configuration**: Support for Baseline 2024/2025 targets or custom browserslist
+- **VS Code Integration**: Real-time diagnostics with MDN links and polyfill suggestions
+- **GitHub Action**: Automated PR comments with compatibility reports
+- **Code Scanning**: SARIF output for GitHub Advanced Security integration
 
-## 🚀 Quick Start
+## Quick Start
 
 ### CLI Usage
 
@@ -57,9 +57,9 @@ jobs:
           comment-pr: true
 ```
 
-## ⚙️ Configuration
+## Configuration
 
-Create a `greenlight.config.json` in your project root:
+Create `greenlight.config.json` in your project root:
 
 ```json
 {
@@ -93,7 +93,7 @@ Create a `greenlight.config.json` in your project root:
 - **`severity.features`**: Override severity for specific features
 - **`include`**: Glob patterns for files to check
 - **`exclude`**: Glob patterns for files to ignore
-- **`ignore.features`**: Array of feature names to ignore
+- **`ignore.features`**: array of feature names to ignore
 
 ## 🔍 Detected Features
 
@@ -124,18 +124,18 @@ Create a `greenlight.config.json` in your project root:
 - CSS Typed OM
 - And many more...
 
-## 📊 Output Formats
+## Output Formats
 
 ### Console (Human-readable)
 ```
-⚠️  Non-Baseline features detected:
+Non-Baseline features detected:
 
-📄 src/components/modern-features.js
+src/components/modern-features.js
   Line 3:  Optional chaining (?.) - Limited support in older browsers
   Line 5:  Private class field (#field) - ES2022 feature with limited support
   Line 12: Top-level await - Requires modern module support
 
-📄 src/styles/modern.css
+src/styles/modern.css
   Line 2:  :has() selector - Limited browser support
   Line 8:  Container queries - Experimental feature
 ```
@@ -168,7 +168,7 @@ Create a `greenlight.config.json` in your project root:
 ### SARIF (GitHub Code Scanning)
 Full SARIF 2.1.0 format for integration with GitHub Advanced Security and other static analysis tools.
 
-## 🧪 Demo
+## Demo
 
 Run the comprehensive demonstration:
 
@@ -184,7 +184,7 @@ This will showcase:
 - Performance testing
 - Integration capabilities
 
-## 🏗️ Development
+## Development
 
 ### Setup
 ```bash
@@ -222,7 +222,7 @@ npm run package:extension
 npm run build:action
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 greenlight/
@@ -240,7 +240,7 @@ greenlight/
 └── docs/                    # Documentation
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -248,11 +248,11 @@ greenlight/
 4. Ensure all tests pass
 5. Submit a pull request
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file for details.
 
-## 🔗 Links
+## Links
 
 - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=greenlight.greenlight)
 - [GitHub Action Marketplace](https://github.com/marketplace/actions/greenlight)

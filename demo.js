@@ -4,7 +4,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-console.log('Baseline Buddy - Complete Demonstration\n');
+console.log('Greenlight - Complete Demonstration\n');
 console.log('==========================================\n');
 
 function runCommand(command, description) {
@@ -43,7 +43,7 @@ function displayFile(filePath, description, maxLines = 20) {
 }
 
 // Check if CLI is built
-console.log('🔨 Building Baseline Buddy CLI...');
+console.log('🔨 Building Greenlight CLI...');
 runCommand('npm run build:cli', 'Build CLI tool');
 
 // 1. Configuration demonstration
@@ -240,7 +240,7 @@ tempFiles.forEach(file => {
   }
 });
 
-console.log('\n🎉 Baseline Buddy Demonstration Complete!\n');
+console.log('\n🎉 Greenlight Demonstration Complete!\n');
 console.log('=========================================\n');
 
 console.log('📋 What was demonstrated:');

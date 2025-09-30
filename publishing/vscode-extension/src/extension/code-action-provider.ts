@@ -12,9 +12,9 @@ export class CodeActionProvider implements vscode.CodeActionProvider {
     
     const actions: vscode.CodeAction[] = [];
     
-    // Get baseline buddy diagnostics in range
+    // Get Greenlight diagnostics in range
     const baselineDiagnostics = context.diagnostics.filter(
-      diagnostic => diagnostic.source === 'Baseline Buddy'
+      diagnostic => diagnostic.source === 'Greenlight'
     );
 
     for (const diagnostic of baselineDiagnostics) {

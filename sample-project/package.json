@@ -1,7 +1,7 @@
 {
   "name": "baseline-buddy-sample",
   "version": "1.0.0",
-  "description": "Sample project demonstrating non-baseline web features for Baseline Buddy",
+  "description": "Sample project demonstrating non-baseline web features for Greenlight",
   "main": "src/index.html",
   "scripts": {
     "check": "baseline-buddy check src/**/*.{js,ts,css,html}",
@@ -17,7 +17,7 @@
     "demo",
     "modern-web-features"
   ],
-  "author": "Baseline Buddy Team",
+  "author": "Greenlight Team",
   "license": "MIT",
   "devDependencies": {
     "http-server": "^14.0.0"

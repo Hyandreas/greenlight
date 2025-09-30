@@ -78,12 +78,12 @@
   ],
   "contributes": {
     "configuration": {
-      "title": "Baseline Buddy",
+      "title": "Greenlight",
       "properties": {
         "baselineBuddy.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Enable Baseline Buddy diagnostics"
+          "description": "Enable Greenlight diagnostics"
         },
         "baselineBuddy.severity": {
           "type": "string",
@@ -101,17 +101,17 @@
       {
         "command": "baselineBuddy.checkFile",
         "title": "Check Current File",
-        "category": "Baseline Buddy"
+        "category": "Greenlight"
       },
       {
         "command": "baselineBuddy.checkWorkspace",
         "title": "Check All Files",
-        "category": "Baseline Buddy"
+        "category": "Greenlight"
       },
       {
         "command": "baselineBuddy.clearDiagnostics",
         "title": "Clear Diagnostics",
-        "category": "Baseline Buddy"
+        "category": "Greenlight"
       }
     ]
   }

@@ -171,7 +171,7 @@ async function commentOnPR(results: CompatibilityResult[], outputFile: string, t
     
     const existingComment = comments.data.find(c => 
       c.body?.includes('Baseline Compatibility Report') || 
-      c.body?.includes('Baseline Buddy')
+      c.body?.includes('Greenlight')
     );
     
     if (existingComment) {

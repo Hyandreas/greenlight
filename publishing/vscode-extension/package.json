@@ -2,7 +2,7 @@
   "name": "greenlight-web-compat",
   "displayName": "Greenlight Baseline",
   "description": "Real-time detection of non-Baseline web features with compatibility warnings",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "publisher": "AndreasTsang",
   "main": "./dist/extension/extension.js",
   "engines": {
@@ -105,10 +105,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/greenlight.git"
+    "url": "https://github.com/Hyandreas/greenlight.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/greenlight/issues"  
+    "url": "https://github.com/Hyandreas/greenlight/issues"  
   },
-  "homepage": "https://github.com/yourusername/greenlight#readme"
+  "homepage": "https://github.com/Hyandreas/greenlight#readme"
 }

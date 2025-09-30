@@ -1,8 +1,8 @@
 // JSON Schema for baseline.config.json validation
 export const baselineConfigSchema = {
   $schema: "http://json-schema.org/draft-07/schema#",
-  title: "Baseline Buddy Configuration",
-  description: "Configuration file for Baseline Buddy compatibility checker",
+  title: "Greenlight Configuration",
+  description: "Configuration file for Greenlight compatibility checker",
   type: "object",
   properties: {
     $schema: {

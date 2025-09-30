@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baseline Buddy Demo - Modern Web Features</title>
+    <title>Greenlight Demo - Modern Web Features</title>
     <link rel="stylesheet" href="styles/modern-css.css">
 </head>
 <body>
     <header>
-        <h1>Baseline Buddy Demo Project</h1>
+        <h1>Greenlight Demo Project</h1>
         <p>This page demonstrates various non-baseline web features for testing compatibility.</p>
     </header>
 
@@ -129,7 +129,7 @@
 
         // Clipboard controls
         document.getElementById('copy-btn')?.addEventListener('click', async () => {
-            const success = await clipboardManager.copyToClipboard('Hello from Baseline Buddy demo!');
+            const success = await clipboardManager.copyToClipboard('Hello from Greenlight demo!');
             updateStatus(success ? 'Text copied!' : 'Copy failed');
         });
 
@@ -140,7 +140,7 @@
 
         document.getElementById('share-btn')?.addEventListener('click', async () => {
             const success = await clipboardManager.shareContent({
-                title: 'Baseline Buddy Demo',
+                title: 'Greenlight Demo',
                 text: 'Check out this demo of modern web features!',
                 url: window.location.href
             });
@@ -163,7 +163,7 @@
             cssDemo.setModernStyles();
         });
 
-        console.log('Baseline Buddy demo initialized with modern web features!');
+        console.log('Greenlight demo initialized with modern web features!');
     </script>
 </body>
 </html>
